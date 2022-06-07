@@ -1,3 +1,5 @@
+from booking import SeatAllotmentStrategy
+
 class AllotMidSeatStrategy(SeatAllotmentStrategy):
     @staticmethod
     def allot(self, available_seat_numbers: list[str]) -> str:

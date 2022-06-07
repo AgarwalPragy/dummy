@@ -1,8 +1,8 @@
-#ifndef TRIAL_BOOKING_H
-#define TRIAL_BOOKING_H
+#pragma once
 
 #include <string>
 #include <unordered_map>
+#include "Python.h"
 
 using namespace std;
 
@@ -13,7 +13,12 @@ namespace booking {
     struct Person {
         string name;
         string phone_number;
+
         bool operator==(const Person &other) const;
+    };
+
+    struct PersonHasher {
+        size_t operator()(const Person &p) const;
     };
 
     enum class SeatType {
@@ -32,22 +37,20 @@ namespace booking {
 
     class SeatAllotmentStrategy {
     public:
-        [[nodiscard]] virtual string allot(const vector<string> &available_seat_numbers) const = 0;
+        [[nodiscard]] virtual string allot(const vector <string> &available_seat_numbers) const = 0;
     };
 
     struct Ticket {
     private:
         Movie movie;
         datetime booking_made_on;
-        unordered_map<Person, BookingSeat> seats;
+        unordered_map <Person, BookingSeat, PersonHasher> seats;
         double total_amount;
     public:
         BookingSeat add(const Person &person,
-                        const vector<string> &available_seat_numbers,
+                        const vector <string> &available_seat_numbers,
                         const SeatAllotmentStrategy &allotment_strategy);
 
-        void update_seats(const unordered_map<Person, BookingSeat> &new_seats);
+        void update_seats(const unordered_map <Person, BookingSeat> &new_seats);
     };
 }
-
-#endif //TRIAL_BOOKING_H

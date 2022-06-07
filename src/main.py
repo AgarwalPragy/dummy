@@ -1,5 +1,9 @@
+import sys
+sys.path.append("build/booking.macosx-10.9-x86_64-3.9")
+
 from datetime import datetime
 
+from strategies import AllotFirstSeatStrategy, AllotLastSeatStrategy
 from py_strategies.allot_mid import AllotMidSeatStrategy
 
 if __name__ == '__main__':
@@ -14,7 +18,7 @@ if __name__ == '__main__':
 
     seat1 = ticket.add(harry, seats_available, AllotFirstSeatStrategy())
     seats_available.remove(seat1)
-    seat2 = ticket.add(hermione, seats_available, AllotFirstSeatStrategy())
+    seat2 = ticket.add(hermione, seats_available, AllotLastSeatStrategy())
     seats_available.remove(seat2)
     seat3 = ticket.add(ron, seats_available, AllotMidSeatStrategy())
     seats_available.remove(seat3)
