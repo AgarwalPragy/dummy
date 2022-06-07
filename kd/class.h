@@ -1,8 +1,6 @@
 #pragma once
 
-#include "Python.h"
-
-struct c_PyBaseClass;
+#include <stdio.h>
 
 class BaseClass
 {
@@ -11,7 +9,7 @@ public:
 
 	void bar()
 	{
-	  printf("BaseClass::bar()\n");
+		printf("BaseClass::bar()\n");
 		foo();
 	}
 };
@@ -23,18 +21,4 @@ public:
 	{
 		printf("CppClass::foo()\n");
 	}
-};
-
-class PyClass : public BaseClass
-{
-public:
-	void setInstance(c_PyBaseClass* pyInstance)
-	{
-		this->_pyInstance = pyInstance;
-	}
-
-public:
-	void foo() override;
-
-	c_PyBaseClass* _pyInstance;
 };
