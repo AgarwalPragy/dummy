@@ -2,7 +2,7 @@
 
 #include "Python.h"
 
-struct c_BaseClass;
+struct py_BaseClass;
 
 class BaseClass
 {
@@ -28,7 +28,7 @@ public:
 class PyClass : public BaseClass
 {
 public:
-	void setInstance(c_BaseClass* pyInstance)
+	void setInstance(py_BaseClass* pyInstance)
 	{
 		this->_pyInstance = pyInstance;
 	}
@@ -36,5 +36,5 @@ public:
 public:
 	void foo() override;
 
-	c_BaseClass* _pyInstance;
+	py_BaseClass* _pyInstance;
 };

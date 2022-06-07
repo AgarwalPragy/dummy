@@ -21,7 +21,7 @@ cdef class CppClass:
     def foo(self):
         self.thisptr.foo()
 
-cdef public class BaseClass[object c_BaseClass, type c_BaseClass_t]:
+cdef public class BaseClass[object py_BaseClass, type py_BaseClass_t]:
     cdef cpp_PyClass thisptr
 
     def __cinit__(self):
