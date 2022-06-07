@@ -6,11 +6,14 @@ cdef extern from "class.h":
         void foo()
         void bar()
 
+    cdef cppclass cpp_CppClass "CppClass"(cpp_BaseClass):
+        pass
+
+cdef extern from "PyClass.h":
     cdef cppclass cpp_PyClass "PyClass"(cpp_BaseClass):
         void setInstance(BaseClass)
 
-    cdef cppclass cpp_CppClass "CppClass"(cpp_BaseClass):
-        pass
+
 
 cdef class CppClass:
     cdef cpp_CppClass thisptr

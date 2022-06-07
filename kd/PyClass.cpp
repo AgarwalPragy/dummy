@@ -1,4 +1,4 @@
-#include "class.h"
+#include "PyClass.h"
 
 #include "lib.h"
 
