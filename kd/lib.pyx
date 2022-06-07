@@ -21,7 +21,7 @@ cdef class CppClass:
     def foo(self):
         self.thisptr.foo()
 
-cdef public class BaseClass[object c_PyBaseClass, type c_PyBaseClass_t]:
+cdef public class BaseClass[object c_BaseClass, type c_BaseClass_t]:
     cdef cpp_PyClass thisptr
 
     def __cinit__(self):
@@ -33,5 +33,5 @@ cdef public class BaseClass[object c_PyBaseClass, type c_PyBaseClass_t]:
     def foo(self):
         raise NotImplementedError
 
-cdef public PyBaseClass_foo(BaseClass obj):
+cdef public py_BaseClass_foo(BaseClass obj):
     obj.foo()
