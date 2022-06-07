@@ -4,11 +4,11 @@ from setuptools import setup
 from Cython.Build import cythonize
 
 setup(
-    ext_modules=cythonize([Extension("booking", [
-        "booking/__init__.pyx",
+    ext_modules=cythonize([Extension("book", [
+        "booking/book.pyx",
         "booking/booking.cpp",
         "booking/py_booking.cpp",
-        "strategies/__init__.pyx",
+        "strategies/strategies.pyx",
         "strategies/allot_first.cpp",
         "strategies/allot_last.cpp",
         ],

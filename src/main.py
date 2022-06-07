@@ -1,5 +1,5 @@
 import sys
-sys.path.append("build/booking.macosx-10.9-x86_64-3.9")
+sys.path.append("build/lib.macosx-10.9-x86_64-3.9")
 
 from datetime import datetime
 

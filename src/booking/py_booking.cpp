@@ -1,12 +1,12 @@
 #include "py_booking.h"
 
-#include "__init__.h"
+#include "book.h"
 
 
 void PySeatAllotmentStrategy::setInstance(c_PySeatAllotmentStrategy *instance){
     this->_pyInstance = instance;
 }
 
-PySeatAllotmentStrategy::string allot(const vector <string> &available_seat_numbers) const override {
-    PySeatAllotmentStrategy_allot(_pyInstance);
+string PySeatAllotmentStrategy::allot(const vector <string> &available_seat_numbers) const {
+    // PySeatAllotmentStrategy_allot(_pyInstance, available_seat_numbers);
 }

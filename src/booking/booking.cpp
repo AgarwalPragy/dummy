@@ -1,6 +1,5 @@
 #include "booking.h"
 
-using namespace booking;
 
 bool BookingSeat::is_delux() const {
     return type == SeatType::DELUX;

@@ -84,5 +84,5 @@ cdef public class SeatAllotmentStrategy[object c_PySeatAllotmentStrategy, type c
     def allot(self, available_seat_numbers):
         self.thisptr.allot(available_seat_numbers)
 
-cdef PySeatAllotmentStrategy_allot(SeatAllotmentStrategy obj, vector[string] available_seat_numbers):
+cdef public PySeatAllotmentStrategy_allot(SeatAllotmentStrategy obj, vector[string] available_seat_numbers):
     obj.allot(available_seat_numbers)

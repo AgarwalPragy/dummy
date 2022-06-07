@@ -2,9 +2,6 @@
 
 #include "booking.h"
 
-#include "__init__.h"
-
-using namespace booking;
 
 struct c_PySeatAllotmentStrategy;
 
